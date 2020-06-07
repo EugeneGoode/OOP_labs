@@ -62,10 +62,10 @@ class Knight:
             elif i.body_part == 'Legs':
                 self.leg_piece = Armor(i.body_part, i.protection, i.price, i.weight)
 
-for i in range(15):
+for i in range(16):
     collection.insert(i, Armor(Armor.body_part_list[r.randint(0, 3)], r.randint(1, 10), r.randint(1, 5000),r.randint(1, 20)))
 
-for i in range(20):
+for i in range(16, 21):
     collection.insert(i, Armor(Armor.body_part_list[r.randint(0, 3)], r.randint(1, 10), r.randint(1, 5000),r.randint(1, 20)))
 
 John = Knight()
