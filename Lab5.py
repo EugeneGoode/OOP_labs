@@ -7,7 +7,6 @@ char_counter = 1
 
 
 class Text:
-    text = ''
     def __init__(self, text):
         self.sentences = list()
         split_regex = re.compile(r'[.|!|?|…|\v]|\n')
@@ -32,6 +31,7 @@ class Sentences:
 
 
 class Words:
+    text = ''
     palindrome = ''
     palindromes = list()
 
@@ -39,7 +39,7 @@ class Words:
         global sentence_counter, word_counter
         self.chars = list()
         for q in words:
-            Text.text = Text.text + q
+            self.text = self.text + q
             self.chars.append(q)
             Chars(self.chars[-1])
         print('Слово ', word_counter, 'Речення ', sentence_counter, self.chars)
@@ -47,7 +47,7 @@ class Words:
         self.Palindrome_finder()
 
     def Palindrome_finder(self):
-        s = Text.text.lower()
+        s = self.text.lower()
         self.chars = list(s)
         for i in range(1, len(s) - 1):
             if min(i, len(s) - i) * 2 + 1 <= len(self.palindrome):
